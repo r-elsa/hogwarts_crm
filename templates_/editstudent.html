@@ -1,0 +1,145 @@
+{% extends "index.html" %}
+{% block content %}
+
+<h1>Edit student</h1>
+<a href="http://127.0.0.1:5000/students" class="btn btn-primary">Back</a>
+
+  <form class="form-horizontal" action=""method="post">
+    <div class="form-group">
+        
+      <label class="control-label col-sm-2" for="ID">ID</label>
+    <div class="col-sm-10">
+      <input type="ID" class="form-control" id="id" placeholder="" value = "{{student.id}}" readonly name="id">
+        </div>
+
+
+
+    <label class="control-label col-sm-2" for="fname">First name</label>
+    <div class="col-sm-10">
+      <input type="fname" class="form-control" id="fname" placeholder="{{student.fname}}" value = "{{student.fname}}" name="fname" required>
+        </div>
+        <div class="form-group">   
+      <label class="control-label col-sm-2" for="lname">Last Name</label>
+      <div class="col-sm-10">          
+        <input type="lname" class="form-control" id="lname" placeholder="" value = "{{student.lname}}" name="lname" required>
+    </div>
+  
+    <div class="form-group">   
+      <label class="control-label col-sm-2" for="imgurl">Photo URL</label>
+      <div class="col-sm-10">          
+        <input type="imgurl" class="form-control" id="imgurl" name="imgurl" value = "{{student.imgurl}}" placeholder="" required>
+
+    <div class="form-group">   
+      <label class="control-label col-sm-2" for="dmskills">Desired magic skills</label>
+          <select name="dmskills" required> 
+            {% for skill in student.dmskills %}
+            <option value="{{skill}}" selected="selected">{{skill}}</option>
+            {% endfor %}
+        
+            <option value="Alchemy">Alchemy</option>
+            <option value="Animation">Animation</option>
+            <option value="Conjuror">Conjuror</option>
+            <option value="Disintegration">Disintegration</option>
+            <option value="Disintegration">Disintegration</option>
+            <option value="Elemental">Elemental</option>
+            <option value="Healing">Healing</option>
+            <option value="Illusion">Illusion</option>
+            <option value="Immortality">Immortality</option>
+            <option value="Invisibility">Invisibility</option>
+            <option value="Invulnerability">Invulnerability</option>
+            <option value="Necromancer">Necromancer</option>
+            <option value="Omnipresent">Omnipresent</option>
+            <option value="Omniscient">Omniscient</option>
+            <option value="Poison">Poison</option>
+            <option value="Possession">Possession</option>
+            <option value="Self-detonation">Self-detonation</option>
+            <option value="Summoning">Summoning</option>
+            <option value="Water breathing">Water breathing</option>
+          </select>
+
+          
+        <select name="dmskills_level" required>        
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+      </select>
+      </div>
+   
+
+
+    <div class="form-group">   
+        <label class="control-label col-sm-2" for="emskills">Existing magic skills</label>         
+              <select name="emskills" required>
+                {% for skill in student.emskills %}
+                <option value="{{skill}}" selected="selected">{{skill}}</option>
+                {% endfor %}
+                <option value="Alchemy">Alchemy</option>
+                <option value="Animation">Animation</option>
+                <option value="Conjuror">Conjuror</option>
+                <option value="Disintegration">Disintegration</option>
+                <option value="Disintegration">Disintegration</option>
+                <option value="Elemental">Elemental</option>
+                <option value="Healing">Healing</option>
+                <option value="Illusion">Illusion</option>
+                <option value="Immortality">Immortality</option>
+                <option value="Invisibility">Invisibility</option>
+                <option value="Invulnerability">Invulnerability</option>
+                <option value="Necromancer">Necromancer</option>
+                <option value="Omnipresent">Omnipresent</option>
+                <option value="Omniscient">Omniscient</option>
+                <option value="Poison">Poison</option>
+                <option value="Possession">Possession</option>
+                <option value="Self-detonation">Self-detonation</option>
+                <option value="Summoning">Summoning</option>
+                <option value="Water breathing">Water breathing</option>
+              </select>
+
+              <select name="emskills_level" required>    
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            </div>
+        
+            
+         
+
+  <div class="form-group">   
+    <label class="control-label col-sm-2" for="imgurl">Desired courses</label>      
+            <select name="dcourse" multiple required>
+              {% for course in student.dcourse %}
+              <option value="{{course}}" selected="selected">{{course}}</option>
+              {% endfor %}
+              <option value="Alchemy basics">Alchemy basics</option>
+              <option value="Alchemy advanced">Alchemy advanced</option>
+              <option value="Magic for day-to-day life">Magic for day-to-day life</option>
+              <option value="Magic for medical professionals">Magic for medical professionals</option>
+              <option value="Dating with magic">Dating with magic</option>      
+            </select>
+          </div>
+
+          <div class="form-group">   
+            <label class="control-label col-sm-2" for="creation"> Time of creation</label>
+            <div class="col-sm-10">          
+              <input type="imgurl" class="form-control" id="creation" name="creation" value ="{{student.creation}}" readonly>
+
+
+</div>
+      <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+   
+
+
+{% endblock %}
+
+
+
+
+
+
+

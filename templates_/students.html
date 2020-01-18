@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block content %}
+<!--<a href="http://127.0.0.1:5000/students/dashboard" class="btn btn-primary">Dashboard</a>-->
+    <h1>Students</h1>
+    <a href="http://127.0.0.1:5000/addstudent" class="btn btn-primary">Add student</a>
+
+
+    {% for student in students %}
+
+   
+    <div class="card w-50" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{student.fname}} {{student.lname}}</h5>
+        <img src="{{student.imgurl}}" alt="">
+        <a href="http://127.0.0.1:5000/students/{{student.fname}}" class="btn btn-primary">Read more</a>
+      
+      </div>
+    </div>
+
+      {%endfor%}
+
+
+
+    {% endblock %}
+      
